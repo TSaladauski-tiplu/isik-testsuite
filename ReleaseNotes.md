@@ -2,6 +2,11 @@
 
 # Release Notes ISiK Stufe 3 Test Suite
 
+## Release 1.5.1
+
+### changed
+- Dropped evaluation of Dosage text in `MedikationStatement-Read-Extended` Test Case. 
+
 ## Release 1.5.0
 
 ### changed
