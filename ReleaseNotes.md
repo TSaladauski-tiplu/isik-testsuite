@@ -1,6 +1,18 @@
 <img align="right" width="250" height="47" src="imgs/gematik_logo.png"/> <br/>
 
-# Release Notes ISiK Stufe 3 Test Suite
+# Release Notes
+
+## Release 2.0.0
+
+### changed
+- Renamed Project to "ISiK Test Suite"
+- Test Cases for ISiK Level 3 and newer levels are now combined in one Test Suite. By default, tests for Level 3 are executed. To run tests for e.g. Level 5 instead, you need to explicitly select the tag `@Stufe5`.
+- Terminplanung Testcases have been updated with a valid Date
+- Feature Bundles are now renamed as `feature-NAME-LEVEL-VERSION` (where LEVEL is either `stufe3` or `stufe5`).
+- Updated libraries
+
+### added
+- Initial setup for ISiK Level 5 Test Cases (not yet implemented)
 
 ## Release 1.5.2
 

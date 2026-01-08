@@ -1,6 +1,6 @@
 /*-
  * #%L
- * tiger-integration-isik-stufe-3
+ * tiger-integration-isik
  * %%
  * Copyright (C) 2025 gematik GmbH
  * %%
