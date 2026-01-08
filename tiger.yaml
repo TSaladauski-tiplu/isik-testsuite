@@ -39,15 +39,15 @@ logging:
     de.gematik.rbellogger.converter: WARN
 
 additionalConfigurationFiles:
-  - filename: testdata/basis.yaml
+  - filename: testdata/Stufe3/basis.yaml
     baseKey: data
-  - filename: testdata/dokumentenaustausch.yaml
+  - filename: testdata/Stufe3/dokumentenaustausch.yaml
     baseKey: data
-  - filename: testdata/medikation.yaml
+  - filename: testdata/Stufe3/medikation.yaml
     baseKey: data
-  - filename: testdata/terminplanung.yaml
+  - filename: testdata/Stufe3/terminplanung.yaml
     baseKey: data
-  - filename: testdata/vitalparameter.yaml
+  - filename: testdata/Stufe3/vitalparameter.yaml
     baseKey: data
-  - filename: testdata/shared.yaml
+  - filename: testdata/Stufe3/shared.yaml
     baseKey: data

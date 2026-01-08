@@ -1,6 +1,6 @@
 <img align="right" width="250" height="47" src="imgs/gematik_logo.png"/> <br/> 
 
-# ISiK Stufe 3 Test Suite
+# ISiK Test Suite
 
 <details>
   <summary>Table of Contents</summary>
@@ -25,17 +25,18 @@
   </ol>
 </details>
 
-## Notice
-This repository will be soon not maintained anymore, we are migrating to the new GitHub Repository [isik-testsuite](https://github.com/gematik/isik-testsuite).
-
 ## About The Project
-This is a test suite for conformance tests of the ISiK Stufe 3 specification modules:
+This is a test suite for conformance tests of the ISiK specification modules, for both Level 3 and 5:
 
-- [Basis](https://simplifier.net/guide/isik-basis-v3?version=current)
-- [Medikation](https://simplifier.net/guide/isik-medikation-v3?version=current)
-- [Terminplanung](https://simplifier.net/guide/isik-terminplanung-v3?version=current)
-- [Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-v3?version=current)
-- [Vitalparameter und Körpermaße](https://simplifier.net/guide/isik-vitalparamater-v3?version=current)
+- Level 3
+  - [Basis](https://simplifier.net/guide/isik-basis-v3?version=current)
+  - [Medikation](https://simplifier.net/guide/isik-medikation-v3?version=current)
+  - [Terminplanung](https://simplifier.net/guide/isik-terminplanung-v3?version=current)
+  - [Dokumentenaustausch](https://simplifier.net/guide/isik-dokumentenaustausch-v3?version=current)
+  - [Vitalparameter und Körpermaße](https://simplifier.net/guide/isik-vitalparamater-v3?version=current)
+- [Level 5](https://simplifier.net/isik-stufe-5/~guides)
+  
+As default, Tests will be executed for the Level 5 of the specification. To run tests for Level 3 instead, you need to explicitly select the tag `@Stufe3`.
 
 ### Release Notes
 See [ReleaseNotes.md](./ReleaseNotes.md) for all information regarding the (newest) releases.
@@ -47,7 +48,7 @@ See [ReleaseNotes.md](./ReleaseNotes.md) for all information regarding the (newe
 To run the test suite you need the following components:
 
 1. This test suite, which you can get either by cloning this repository or downloading the latest release.
-2. An ISiK resource server (System under Test, SUT) that is compliant with one of the ISiK Stufe 3 specification modules.
+2. An ISiK resource server (System under Test, SUT) that is compliant with one of the ISiK Level 3 or Level 5 specification modules.
 
 Operating system requirements: cf. [Tiger Framework OS requirements](https://gematik.github.io/app-Tiger/Tiger-User-Manual.html#_requirements)
 
@@ -101,7 +102,7 @@ If using the tiger testsuite behind a proxy provide the proxy configuration at t
 
 ### Using Docker
 
-The testsuite is also distributed as a [docker image](https://hub.docker.com/r/gematik1/isik3-testsuite). Make sure, the docker environment has a connection to the SUT (configure [docker proxy settings](https://docs.docker.com/engine/cli/proxy/) if needed). 
+The testsuite is also distributed as a [docker image](https://hub.docker.com/r/gematik1/isik-testsuite). Make sure, the docker environment has a connection to the SUT (configure [docker proxy settings](https://docs.docker.com/engine/cli/proxy/) if needed). 
 
 To use the image, download and adjust the following files according to your test environment:
 * `tiger.yaml` (configuration of the test environment and test framework)

@@ -2,6 +2,7 @@
 
 #We recommend to use a base image of the same version as the tiger version you are using in your project.
 # This ensures that the tiger dependencies are already loaded into the local maven repository.
+# https://hub.docker.com/r/gematik1/tiger-testsuite-baseimage/tags
 FROM gematik1/tiger-testsuite-baseimage:4.1.7
 
 # Git Args
@@ -10,8 +11,8 @@ ARG VERSION
 
 LABEL de.gematik.vendor="gematik GmbH" \
       maintainer="software-development@gematik.de" \
-      de.gematik.app="ISIK3 Testsuite" \
-      de.gematik.git-repo-name="https://github.com/gematik/isik3-testsuite" \
+      de.gematik.app="ISIK Testsuite" \
+      de.gematik.git-repo-name="https://github.com/gematik/isik-testsuite" \
       de.gematik.commit-sha=$COMMIT_HASH \
       de.gematik.version=$VERSION
 

@@ -1,7 +1,8 @@
 /.idea/
 /target/
-/tiger-integration-isik-stufe-3.iml
+/tiger-integration-isik.iml
 
 .jenkins
 tiger-ci.yaml
 README-internal.md
+docker-compose.yaml

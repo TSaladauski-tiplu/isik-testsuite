@@ -5,27 +5,27 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.gematik</groupId>
-    <artifactId>tiger-integration-isik-stufe-3</artifactId>
-    <version>1.5.2</version>
+    <artifactId>tiger-integration-isik</artifactId>
+    <version>2.0.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <tiger.version>4.1.10</tiger.version>
-        <tiger.fhir.version>1.2.13</tiger.fhir.version>
+        <tiger.version>4.1.12</tiger.version>
+        <tiger.fhir.version>1.2.14</tiger.fhir.version>
         <tiger-cloud-extension.version>4.0.9</tiger-cloud-extension.version>
         <spotless-maven-plugin.version>3.1.0</spotless-maven-plugin.version>
         <spotless.google-java-format.version>1.32.0</spotless.google-java-format.version>
         <lombok.version>1.18.42</lombok.version>
-        <logback.version>1.5.21</logback.version>
-        <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
+        <logback.version>1.5.23</logback.version>
+        <maven-assembly-plugin.version>3.8.0</maven-assembly-plugin.version>
         <maven-failsafe-plugin.version>3.5.4</maven-failsafe-plugin.version>
-        <license-maven-plugin.version>2.7.0</license-maven-plugin.version>
+        <license-maven-plugin.version>2.7.1</license-maven-plugin.version>
         <ospo-resources.version>1.3.2</ospo-resources.version>
         <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
         <junit-platform-engine.version>6.0.1</junit-platform-engine.version>
-        <exec-maven-plugin.version>3.6.2</exec-maven-plugin.version>
+        <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
         <commons-lang3.version>3.20.0</commons-lang3.version>
     </properties>
 
@@ -93,15 +93,14 @@
                 </plugins>
             </build>
         </profile>
-
         <!-- This profile is meant to create a feature bundle zip archive for upload to Titus.
              The zip will contain all feature files and the pom.xml
 
-             To run it issue: mvn -P pack-bundle-zip
+             To run it issue: mvn -P pack-bundle-zip-stufe3
              ZIP file will be located in the target folder
         -->
         <profile>
-            <id>pack-bundle-zip</id>
+            <id>pack-bundle-zip-stufe3</id>
             <build>
                 <defaultGoal>clean initialize</defaultGoal>
                 <plugins>
@@ -109,18 +108,19 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
                         <version>${maven-assembly-plugin.version}</version>
+                        <!-- Global Configuration -->
                         <configuration>
-                            <finalName>bundle</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
                         </configuration>
                         <executions>
                             <execution>
                                 <configuration>
-                                    <appendAssemblyId>true</appendAssemblyId>
+                                    <finalName>feature-basis-stufe3-${project.version}</finalName>
                                     <descriptors>
-                                        <descriptor>src/test/assembly/zip-feature-bundle-basis.xml</descriptor>
+                                        <descriptor>src/test/assembly/Stufe3/zip-feature-bundle-basis.xml</descriptor>
                                     </descriptors>
                                 </configuration>
-                                <id>zip-feature-bundle-basis</id>
+                                <id>zip-feature-bundle-basis-stufe3</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>single</goal>
@@ -128,12 +128,14 @@
                             </execution>
                             <execution>
                                 <configuration>
-                                    <appendAssemblyId>true</appendAssemblyId>
+                                    <finalName>feature-dokumentenaustausch-stufe3-${project.version}</finalName>
                                     <descriptors>
-                                        <descriptor>src/test/assembly/zip-feature-bundle-dokumentenaustausch.xml</descriptor>
+                                        <descriptor>
+                                            src/test/assembly/Stufe3/zip-feature-bundle-dokumentenaustausch.xml
+                                        </descriptor>
                                     </descriptors>
                                 </configuration>
-                                <id>zip-feature-bundle-dokumentenaustausch</id>
+                                <id>zip-feature-bundle-dokumentenaustausch-stufe3</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>single</goal>
@@ -141,12 +143,12 @@
                             </execution>
                             <execution>
                                 <configuration>
-                                    <appendAssemblyId>true</appendAssemblyId>
+                                    <finalName>feature-medikation-stufe3-${project.version}</finalName>
                                     <descriptors>
-                                        <descriptor>src/test/assembly/zip-feature-bundle-medikation.xml</descriptor>
+                                        <descriptor>src/test/assembly/Stufe3/zip-feature-bundle-medikation.xml</descriptor>
                                     </descriptors>
                                 </configuration>
-                                <id>zip-feature-bundle-medikation</id>
+                                <id>zip-feature-bundle-medikation-stufe3</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>single</goal>
@@ -154,12 +156,12 @@
                             </execution>
                             <execution>
                                 <configuration>
-                                    <appendAssemblyId>true</appendAssemblyId>
+                                    <finalName>feature-terminplanung-stufe3-${project.version}</finalName>
                                     <descriptors>
-                                        <descriptor>src/test/assembly/zip-feature-bundle-terminplanung.xml</descriptor>
+                                        <descriptor>src/test/assembly/Stufe3/zip-feature-bundle-terminplanung.xml</descriptor>
                                     </descriptors>
                                 </configuration>
-                                <id>zip-feature-bundle-terminplanung</id>
+                                <id>zip-feature-bundle-terminplanung-stufe3</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>single</goal>
@@ -167,12 +169,12 @@
                             </execution>
                             <execution>
                                 <configuration>
-                                    <appendAssemblyId>true</appendAssemblyId>
+                                    <finalName>feature-vitalparameter-stufe3-${project.version}</finalName>
                                     <descriptors>
-                                        <descriptor>src/test/assembly/zip-feature-bundle-vitalparameter.xml</descriptor>
+                                        <descriptor>src/test/assembly/Stufe3/zip-feature-bundle-vitalparameter.xml</descriptor>
                                     </descriptors>
                                 </configuration>
-                                <id>zip-feature-bundle-vitalparameter</id>
+                                <id>zip-feature-bundle-vitalparameter-stufe3</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>single</goal>
@@ -183,11 +185,16 @@
                 </plugins>
             </build>
         </profile>
-
         <profile>
-            <id>all</id>
+            <id>stufe3</id>
             <properties>
-                <TESTS_TO_RUN>@Basis or @Medikation or @Dokumentenaustausch or @Vitalparameter or @Terminplanung</TESTS_TO_RUN>
+                <TESTS_TO_RUN>@Stufe3 and (@Basis or @Medikation or @Dokumentenaustausch or @Vitalparameter or @Terminplanung)</TESTS_TO_RUN>
+            </properties>
+        </profile>
+        <profile>
+            <id>stufe5</id>
+            <properties>
+                <TESTS_TO_RUN>@Stufe5 and (@Basis or @Medikation or @Dokumentenaustausch or @Vitalparameter or @Terminplanung)</TESTS_TO_RUN>
             </properties>
         </profile>
     </profiles>
