@@ -21,7 +21,7 @@ Feature: Read Information from a resource of type Location that identifies the p
       * Operational status: Occupied
       * Managing organization: Reference to the Organization resource from the test case Organization-Read
       * Part of: Reference to the Location resource from the test case Location-Room-Read
-      * (Optional) Tag: Value defined through the configuration variables 'tag-value' and 'tag-system'
+      * Tag: Value defined through the configuration variables 'tag-value' and 'tag-system'
     """
 
   Scenario: Read and Validate Bed Placement Location by its ID

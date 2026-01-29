@@ -29,7 +29,7 @@ Feature: Read Information from a resource of type Location (@Location-Read)
       * Position: Latitude 52.52, Longitude 13.405
       * Hours of Operation: Monday to Friday all day, Saturday 8am to 1pm, closed on Sunday
       * Managing organization: Reference to the Organization resource from the test case Organization-Read
-      * (Optional) Tag: Value defined through the configuration variables 'tag-value' and 'tag-system'
+      * Tag: Value defined through the configuration variables 'tag-value' and 'tag-system'
     """
 
   Scenario: Read and Validation of the CapabilityStatement
