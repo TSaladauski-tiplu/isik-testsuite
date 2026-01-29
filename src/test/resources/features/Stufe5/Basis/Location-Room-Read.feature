@@ -21,7 +21,7 @@ Feature: Read Information from a resource of type Location that identifies a roo
       * Operational status: Occupied
       * Managing organization: Reference to the Organization resource from the test case Organization-Read
       * Part of: Reference to the Location resource from the test case Location-Read
-      * (Optional) Tag: Value defined through the configuration variables 'tag-value' and 'tag-system'
+      * Tag: Value defined through the configuration variables 'tag-value' and 'tag-system'
     """
 
   Scenario: Read and Validate Room Location by its ID

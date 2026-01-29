@@ -2,6 +2,12 @@
 
 # Release Notes
 
+## Release 2.1.1
+
+### changed
+
+- Test for CapabilityStatement `tag` removed from `Location-Search` and `Organization-Search`
+
 ## Release 2.1.0
 
 ### added

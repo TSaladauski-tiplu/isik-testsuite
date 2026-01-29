@@ -32,7 +32,7 @@ Feature: Read Information from a resource of type Organization (@Organization-Re
       * Contact: Name: Dr. Max Mustermann, Phone: +49 987 6543210, Purpose: Billing
       * Part of: Reference to another Organization resource (can be created manually, the ID must be stored in the configuration variable 'organization-read-parent-id')
       * (Optional) Endpoint: Reference to any Endpoint resource
-      * (Optional) Tag: Value defined through the configuration variables 'tag-value' and 'tag-system'
+      * Tag: Value defined through the configuration variables 'tag-value' and 'tag-system'
     """
 
   Scenario: Read and Validate Organization by its ID
